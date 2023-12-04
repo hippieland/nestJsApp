@@ -22,7 +22,7 @@ export class UserService {
   }
 
   async update(id: string, user: User): Promise<User | null> {
-    return this.userModel.findByIdAndUpdate(id, user, { new: true }).exec();
+    return this.userModel.findByIdAndUpdate(id, user, { new: true });
   }
 
   async delete(id: string): Promise<void> {

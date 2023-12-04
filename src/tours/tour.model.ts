@@ -6,7 +6,7 @@ export class Tour extends Document {
   @Prop({ required: true })
   name: string;
 
-  @Prop({ required: true, unique: true })
+  @Prop({ required: true, unique: false })
   price: number;
 
   @Prop({ required: false, unique: false })
@@ -33,8 +33,6 @@ export class Tour extends Document {
   @Prop({ required: false, unique: false })
   image: string;
 
-
-  // Otros campos según tus necesidades
 }
 
-export const UserModel = SchemaFactory.createForClass(Tour);
+export const TourModel = SchemaFactory.createForClass(Tour);
