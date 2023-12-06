@@ -1,6 +1,8 @@
 // jest.config.js
 
-module.exports = {
+
+
+export default {
     preset: 'ts-jest',
     testEnvironment: 'node',
     moduleNameMapper: {
@@ -8,5 +10,13 @@ module.exports = {
       "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
     "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     },
+    moduleFileExtensions: ['js', 'json', 'ts'],
+    "scripts": {
+      "test": "jest"
+    },
+    "jest": {
+      "preset": "ts-jest",
+      "testEnvironment": "node"
+    }
   };
   

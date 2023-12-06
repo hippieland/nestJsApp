@@ -4,7 +4,7 @@ import { TourController } from './tour.controller';
 import { TourService } from './tour.service';
 import { Tour, TourModel } from './tour.model';
 import { ConfigModule } from '@nestjs/config';
-import { databaseConfig } from 'src/config/database.config';
+import { databaseConfig } from '../config/database.config';
 
 @Module({
   imports: [ConfigModule,

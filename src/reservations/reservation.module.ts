@@ -3,8 +3,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ReservationController } from './reservation.controller';
 import { ReservationService } from './reservation.service';
 import { Reservation, ReservationModel } from './reservation.model';
-import { ConfigModule, ConfigService } from '@nestjs/config';
-import { databaseConfig, getDatabaseConfig } from 'src/config/database.config';
+import { ConfigModule } from '@nestjs/config';
+import { databaseConfig } from '../config/database.config';
 
 @Module({
   imports: [ConfigModule,

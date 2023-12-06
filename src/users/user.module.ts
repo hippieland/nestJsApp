@@ -3,8 +3,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
 import { User, UserModel } from './user.model';
-import { ConfigModule, ConfigService } from '@nestjs/config';
-import { databaseConfig, getDatabaseConfig } from 'src/config/database.config';
+import { ConfigModule } from '@nestjs/config';
+import { databaseConfig } from '../config/database.config';
 
 @Module({
   imports: [ConfigModule,

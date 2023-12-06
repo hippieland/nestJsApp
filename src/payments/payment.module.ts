@@ -4,7 +4,7 @@ import { PaymentController } from './payment.controller';
 import { PaymentService } from './payment.service';
 import { Payment, PaymentModel } from './payment.model';
 import { ConfigModule } from '@nestjs/config';
-import { databaseConfig } from 'src/config/database.config';
+import { databaseConfig } from '../config/database.config';
 
 @Module({
   imports: [ConfigModule,
