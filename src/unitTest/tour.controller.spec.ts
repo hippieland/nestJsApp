@@ -1,7 +1,7 @@
 
 import * as supertest from 'supertest';
 import { Test } from '@nestjs/testing';
-import { AppModule } from '../app.module';
+import { AppModule } from '../module/app.module';
 
 describe('TourController (e2e)', () => {
   let app;

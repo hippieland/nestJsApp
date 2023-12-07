@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ReservationService } from './reservation.service';
+import { ReservationService } from '../service/reservation.service';
 import { getModelToken } from '@nestjs/mongoose';
-import { Reservation, ReservationModel } from './reservation.model';
+import { Reservation, ReservationModel } from '../model/reservation.model';
 import { Document, Model } from 'mongoose';
 
 const mockReservationModel = {

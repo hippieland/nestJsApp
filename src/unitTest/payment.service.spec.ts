@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { PaymentService } from './payment.service';
+import { PaymentService } from '../service/payment.service';
 import { getModelToken } from '@nestjs/mongoose';
-import { Payment, PaymentModel } from './payment.model';
+import { Payment, PaymentModel } from '../model/payment.model';
 import { Document, Model } from 'mongoose';
 
 const mockPaymentModel = {

@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { TourService } from './tour.service';
+import { TourService } from '../service/tour.service';
 import { Document, Model } from 'mongoose';
 import { getModelToken } from '@nestjs/mongoose';
-import { Tour, TourModel } from './tour.model'
+import { Tour, TourModel } from '../model/tour.model'
 
 const mockTourModel = {
   find: jest.fn(),

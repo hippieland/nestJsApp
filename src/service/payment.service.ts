@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Payment, PaymentModel } from './payment.model';
+import { Payment, PaymentModel } from '../model/payment.model';
 
 @Injectable()
 export class PaymentService {

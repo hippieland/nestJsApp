@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { TourController } from './tour.controller';
-import { TourService } from './tour.service';
-import { Tour, TourModel } from './tour.model';
+import { TourController } from '../controller/tour.controller';
+import { TourService } from '../service/tour.service';
+import { Tour, TourModel } from '../model/tour.model';
 import { ConfigModule } from '@nestjs/config';
 import { databaseConfig } from '../config/database.config';
 

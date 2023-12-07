@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
-import { Tour } from './tour.model';
-import { TourService } from './tour.service';
+import { Tour } from '../model/tour.model';
+import { TourService } from '../service/tour.service';
 
 @Controller('tours')
 export class TourController {
