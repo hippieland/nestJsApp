@@ -4,12 +4,14 @@ import { Model } from 'mongoose';
 import { Reservation } from '../model/reservation.model';
 import * as nodemailer from 'nodemailer';
 import { UserService } from './user.service';
+import { TourService } from './tour.service';
 
 @Injectable()
 export class ReservationService {
     
     constructor(@InjectModel(Reservation.name) private readonly reservationModel: Model<Reservation>,
-                private readonly userService: UserService) {}
+                private readonly userService: UserService, 
+                private readonly tourService: TourService) {}
 
     async findAll(): Promise<Reservation[]> {
         return this.reservationModel.find().exec();
@@ -43,6 +45,7 @@ export class ReservationService {
 
     async sendReservationConfirmation(reservation: Reservation): Promise<void> {
     const user = await this.userService.findOneById(reservation.userId);
+    const tour = await this.tourService.findOneById(reservation.tourId);
 
     // Configura el transporte de nodemailer (usando un servicio de correo como SMTP)
     const transporter = nodemailer.createTransport({
@@ -58,7 +61,7 @@ export class ReservationService {
         from: 'hipilandiatour@gmail.com',
         to: user.email,
         subject: 'Confirmación de reserva',
-        text: `¡Hola ${user.name}!\n\nTu reserva para el tour con ID ${reservation.tourId} ha sido confirmada.\nFecha de reserva: ${reservation.date}\nPax: ${reservation.pax}\nTotal: ${reservation.totalPrice}`,
+        text: `¡Hola ${user.name}!\n\nTu reserva para el tour ${tour.name} ha sido confirmada.\nFecha de reserva: ${reservation.date}\nPax: ${reservation.pax}\nTotal: ${reservation.totalPrice}`,
     };
 
     // Envía el correo electrónico

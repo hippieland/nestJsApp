@@ -11,6 +11,7 @@ import { databaseConfig } from '../config/database.config';
     MongooseModule.forRootAsync(databaseConfig), 
     MongooseModule.forFeature([{ name: Tour.name, schema: TourModel }])],
   controllers: [TourController],
-  providers: [TourService]
+  providers: [TourService],
+  exports: [TourService]
 })
 export class TourModule {}

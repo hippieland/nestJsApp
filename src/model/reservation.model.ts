@@ -3,20 +3,26 @@ import { Document } from 'mongoose';
 
 @Schema()
 export class Reservation extends Document {
-  @Prop({ required: true, unique: false  })
+  @Prop({ required: true })
   userId: string;
 
-  @Prop({ required: true , unique: false  })
+  @Prop({ required: true })
   tourId: string;
 
-  @Prop({ required: true, unique: false })
+  @Prop({ required: true })
   pax: number;
 
-  @Prop({ required: true, unique: false })
+  @Prop({ required: true })
   totalPrice: number;
 
-  @Prop({ required: true, unique: false  })
+  @Prop({ required: true })
   date: string;
+
+  @Prop()
+  hostingDetails: string;
+
+  @Prop()
+  specialConditions: string;
 
 }
 
